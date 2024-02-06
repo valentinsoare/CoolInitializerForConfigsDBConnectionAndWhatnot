@@ -31,6 +31,7 @@ public class DatabaseConnection {
 
     @InitializerMethod
     public void connectToDatabase2() {
-        System.out.printf("%nConnecting to database 2%n");
+        System.out.printf("%nConnecting to database 2");
+        System.out.printf("%nConnection to database 2 succeeded!");
     }
 }

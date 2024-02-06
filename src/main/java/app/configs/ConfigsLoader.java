@@ -9,6 +9,6 @@ public class ConfigsLoader {
 
     @InitializerMethod
     public void loadAllConfigs() {
-        System.out.println("Loading all configuration files");
+        System.out.printf("%nLoading all configuration files");
     }
 }
