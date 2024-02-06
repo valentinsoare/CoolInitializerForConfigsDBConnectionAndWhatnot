@@ -1,5 +1,6 @@
 import annotations.InitializerClass;
 import annotations.InitializerMethod;
+import annotations.RetryOperation;
 import annotations.ScanPackages;
 
 import java.io.IOException;
@@ -11,6 +12,7 @@ import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 @ScanPackages(packages = {"app.saver", "app.http",
         "app.databases", "app.configs"}
@@ -21,8 +23,7 @@ public class Main {
     }
 
     public static void initialize()
-            throws NoSuchMethodException, InvocationTargetException, InstantiationException,
-            IllegalAccessException, URISyntaxException, IOException, ClassNotFoundException {
+            throws Throwable {
 
         ScanPackages scanPackages = Main.class.getAnnotation(ScanPackages.class);
 
@@ -43,7 +44,33 @@ public class Main {
             Object instance = clazz.getDeclaredConstructor().newInstance();
 
             for (Method method : methods) {
+                callInitializingMethod(instance, method);
+            }
+        }
+    }
+
+    private static void callInitializingMethod(Object instance, Method method) throws Throwable {
+        RetryOperation retryOperation = method.getAnnotation(RetryOperation.class);
+
+        int numberOfRetries = (retryOperation == null) ? 0 : retryOperation.numberOfRetries();
+
+        while (true) {
+            try {
                 method.invoke(instance);
+                break;
+            } catch (InvocationTargetException e) {
+                Throwable targetException = e.getTargetException();
+
+                if (numberOfRetries > 0 &&
+                        Set.of(retryOperation.retryExceptions()).contains(targetException.getClass())) {
+                    numberOfRetries--;
+                    System.out.print("Retrying...");
+                    Thread.sleep(retryOperation.durationBetweenRetriesMs());
+                } else if (retryOperation != null) {
+                    throw new Exception(retryOperation.failureMessage(), targetException);
+                } else {
+                    throw targetException;
+                }
             }
         }
     }

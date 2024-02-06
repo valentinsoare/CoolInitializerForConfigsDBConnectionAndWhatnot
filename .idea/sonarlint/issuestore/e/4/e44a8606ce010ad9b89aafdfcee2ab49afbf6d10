@@ -1,7 +1,9 @@
 
-f
-java:S2095^"DUse try-with-resources or close this "Stream" in a "finally" clause.(ÿÍÖÜùÿÿÿÿ8îõ†û×1
+b	java:S112F"FDefine and throw a dedicated exception instead of using a generic one.(ôõ”„8Î˜Ãü×1
+g	java:S1124"FDefine and throw a dedicated exception instead of using a generic one.(Ë™£Ëıÿÿÿÿ8³½£ı×1
 e
-java:S2095L"HUse try-with-resources or close this "FileSystem" in a "finally" clause.(ò„š8îõ†û×1
+java:S2095g"HUse try-with-resources or close this "FileSystem" in a "finally" clause.(ò„š8ã˜Ãü×1
+f
+java:S2095y"DUse try-with-resources or close this "Stream" in a "finally" clause.(ÿÍÖÜùÿÿÿÿ8ã˜Ãü×1
 c
-java:S1612_"AReplace this lambda with method reference 'Files::isRegularFile'.(š®²úÿÿÿÿ8ôõ†û×1
+java:S1612z"AReplace this lambda with method reference 'Files::isRegularFile'.(š®²úÿÿÿÿ8ê˜Ãü×1

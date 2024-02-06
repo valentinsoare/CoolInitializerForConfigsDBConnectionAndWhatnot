@@ -1,22 +1,6 @@
 
 7
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
-b
-2src/main/java/io/moviesondemand/projects/Main.java,5/8/58772261931e40ebc465e80480f244021c0fc7b8
-z
-Jsrc/main/java/io/moviesondemand/projects/annotations/InitializerClass.java,8/3/838c9904120abc2d8cd4c6f56620ff00cb820769
-{
-Ksrc/main/java/io/moviesondemand/projects/annotations/InitializerMethod.java,0/6/0605d6eb60ac2a0b8e22da1e04c73f463160d4cb
-w
-Gsrc/main/java/io/moviesondemand/projects/app/configs/ConfigsLoader.java,f/b/fb84d2ece85ab451e26b50a32a937a6856f603c7
-w
-Gsrc/main/java/io/moviesondemand/projects/app/databases/CacheLoader.java,d/0/d0da75868b88943ac2d278002f7d0d4df54f3957
-~
-Nsrc/main/java/io/moviesondemand/projects/app/databases/DatabaseConnection.java,e/0/e03379e92197c33544f5b854ed4b8739261e959b
-v
-Fsrc/main/java/io/moviesondemand/projects/app/http/ServiceRegistry.java,b/e/be5a44f3a1b43ea78d8fa2a231fd04abe42de350
-q
-Asrc/main/java/io/moviesondemand/projects/app/saver/AutoSaver.java,0/a/0ab02a06af9889b62a3e768079bd1fca4e4d2598
 _
 /src/main/java/annotations/InitializerClass.java,6/0/60e0768e0891990334e7fb74e527f518da81af09
 `
@@ -41,3 +25,7 @@ S
 #.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
 w
 G.idea/artifacts/CoolInitializerForConfigsDBConnectionAndWhatnot_jar.xml,8/4/846740fa597c7518fcca4578cf511ab0651246a6
+]
+-src/main/java/annotations/RetryOperation.java,8/d/8debe5e8e53b404243fa4a689ed8cc0a9b8fdd48
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

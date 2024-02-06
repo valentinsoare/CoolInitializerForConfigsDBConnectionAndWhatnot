@@ -1,1 +1,1 @@
-Init phase of an applicatoon with custom annotations.
+Init phase of an application with custom annotations.
