@@ -1,7 +1,6 @@
-package io.moviesondemand.projects;
-
-import io.moviesondemand.projects.annotations.InitializerClass;
-import io.moviesondemand.projects.annotations.InitializerMethod;
+import annotations.InitializerClass;
+import annotations.InitializerMethod;
+import annotations.ScanPackages;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -13,14 +12,21 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+@ScanPackages(packages = {"app.saver", "app.http",
+        "app.databases", "app.configs"}
+)
 public class Main {
     public static void main(String[] args) throws Throwable {
-        initialize("app.saver");
+        initialize();
     }
 
-    public static void initialize(String ... packageNames)
+    public static void initialize()
             throws NoSuchMethodException, InvocationTargetException, InstantiationException,
             IllegalAccessException, URISyntaxException, IOException, ClassNotFoundException {
+
+        ScanPackages scanPackages = Main.class.getAnnotation(ScanPackages.class);
+        String[] packageNames = scanPackages.packages();
+
         List<Class<?>> classes = getAllClasses(packageNames);
 
         for (Class<?> clazz : classes) {

@@ -1,8 +1,8 @@
 
-package io.moviesondemand.projects.app.saver;
+package app.saver;
 
-import io.moviesondemand.projects.annotations.InitializerClass;
-import io.moviesondemand.projects.annotations.InitializerMethod;
+import annotations.InitializerClass;
+import annotations.InitializerMethod;
 
 @InitializerClass
 public class AutoSaver {

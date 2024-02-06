@@ -1,8 +1,8 @@
 
-package io.moviesondemand.projects.app.databases;
+package app.databases;
 
-import io.moviesondemand.projects.annotations.InitializerClass;
-import io.moviesondemand.projects.annotations.InitializerMethod;
+import annotations.InitializerClass;
+import annotations.InitializerMethod;
 
 @InitializerClass
 public class CacheLoader {
