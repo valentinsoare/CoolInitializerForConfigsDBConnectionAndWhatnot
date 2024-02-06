@@ -1,0 +1,7 @@
+
+_
+java:S2095Q"DUse try-with-resources or close this "Stream" in a "finally" clause.(ÿÍÖÜùÿÿÿÿ
+^
+java:S2095?"HUse try-with-resources or close this "FileSystem" in a "finally" clause.(ò„š
+\
+java:S1612R"AReplace this lambda with method reference 'Files::isRegularFile'.(š®²úÿÿÿÿ
