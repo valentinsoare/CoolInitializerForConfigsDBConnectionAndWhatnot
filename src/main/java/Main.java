@@ -25,6 +25,11 @@ public class Main {
             IllegalAccessException, URISyntaxException, IOException, ClassNotFoundException {
 
         ScanPackages scanPackages = Main.class.getAnnotation(ScanPackages.class);
+
+        if (scanPackages == null || scanPackages.packages().length == 0) {
+            return;
+        }
+
         String[] packageNames = scanPackages.packages();
 
         List<Class<?>> classes = getAllClasses(packageNames);
